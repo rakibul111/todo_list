@@ -97,11 +97,33 @@ class TodoController extends Controller
 
     // update todo list from edit.blade.php
     public function update(TodoCreateRequest $request, Todo $todo){
-
+        // update title and description
         $todo->update(['title' => $request->title]);
         $todo->update(['description' => $request->description]);
 
-        
+
+         // if steps availabe, update steps(update steps table)
+         if($request->stepName){
+            
+            foreach($request->stepName as $index => $step){
+                // if step field is null, do nothing continue the loop
+                if($step == ''){
+                    continue;
+                }
+
+                // get the id of steps table from edit-step.blade
+                $id = $request->stepId[$index];
+                // if the id is not found, create one step in steps table
+                if(!$id){
+                    $todo->steps()->create(['name' => $step]);
+                }
+                // if the id is found, update one step in steps table
+                else{
+                    $step_obj = Step::find($id);
+                    $step_obj->update(['name' => $step]);
+                }
+            }
+        }
 
         return redirect(route('todo.index'))->with('message' , 'Updated!');
     }
