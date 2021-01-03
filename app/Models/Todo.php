@@ -11,6 +11,14 @@ class Todo extends Model
 
     protected $fillable= [
         'title',
-        'completed'
+        'completed',
+        'description'
     ];
+
+    // todo to steps relationship (1 to many)
+
+    public function steps()
+    {
+        return  $this->hasMany(Step::class);
+    }
 }

@@ -1,15 +1,39 @@
 @extends('todos.layout')
 
 @section('content')
-    <h1 class="text-2xl border-b pb-3">What next you need To-Do</h1>
-    
-    <x-alert />
+    <div class="flex justify-between border-b p-3">
+        <!-- Header -->
+        <h1 class="text-2xl">What next you need To-Do</h1>
+
+        <!-- Back button -->
+        <a href="{{route('todo.index')}}" class="mx-5 py-2 text-gray-400 cursor-pointer">
+            <span class="fas fa-arrow-left"></span>
+        </a>
+    </div>
+
+    <!-- showing success/error message (component) -->
+    <x-alert /> 
 
     <form action="{{route('todo.store')}}" method="post" class="py-5">
         @csrf
-        <input type="text" name="title" class="py-2 px-2 border rounded">
-        <input type="submit" value="Create" class="py-2 px-2 border rounded">
+        <div class="py-1">
+            <input type="text" name="title" class="p-2 border rounded" placeholder="Title">
+        </div>
+        
+        <div class="py-1">
+            <textarea name="description" class="p-2 border rounded" placeholder="Description"></textarea>
+        </div>
+
+        <div class="py-1">
+            
+            @livewire('step')
+
+        </div>
+
+        <!-- Create Button -->
+        <div class="py-1">
+            <input type="submit" value="Create" class="py-2 px-2 border rounded">
+        </div>
     </form>
 
-    <a href="{{route('todo.index')}}" class="py-1 px-1 mx-5 bg-white-400 rounded cursor-pointer border">Back</a>
 @endsection
