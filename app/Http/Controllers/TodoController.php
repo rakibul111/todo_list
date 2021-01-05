@@ -48,6 +48,7 @@ class TodoController extends Controller
         // $request->validate([
         //     'title'=> 'required|max:255'
         // ]);
+        
         /////////////////////////////////////////////////////////////////
         // $rules=[
         //     'title'=>'required|max:255'
@@ -70,6 +71,7 @@ class TodoController extends Controller
         // Create todos(insert into table) using User->todos()
         auth()->user()->todos()->create($request->all());
         
+        // For adding steps
         // get the last entered todos raw id
         $todo_id = Todo::orderBy('id' , 'desc')->first()->id;
     
@@ -77,9 +79,10 @@ class TodoController extends Controller
         
         // if steps availabe, create steps(insert into table)
         if($request->step){
+
             foreach($request->step as $step){
                 // if step field is null, do nothing continue the loop
-                if($step==''){
+                if($step == ''){
                     continue;
                 }
                 $step_obj->create(['name' => $step, 'todo_id' => $todo_id]);

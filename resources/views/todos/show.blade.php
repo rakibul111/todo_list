@@ -1,12 +1,13 @@
 @extends('todos.layout')
 
 @section('content')
+    <!-- showing title -->
     <div class="flex justify-between border-b p-3">
         <!-- Header -->
         <h1 class="text-2xl">{{$todo->title}}</h1>
 
         <!-- Back button -->
-        <a href="{{route('todo.index')}}" class="mx-5 py-2 text-gray-400 cursor-pointer">
+        <a href="{{route('todo.index')}}" class="mx-5 py-2 text-gray-400 text-base cursor-pointer">
             <span class="fas fa-arrow-left"></span>
         </a>
     </div>

@@ -6,7 +6,7 @@
         <h1 class="text-2xl">What next you need To-Do</h1>
 
         <!-- Back button -->
-        <a href="{{route('todo.index')}}" class="mx-5 py-2 text-gray-400 cursor-pointer">
+        <a href="{{route('todo.index')}}" class="mx-5 py-2 text-gray-400 text-base cursor-pointer">
             <span class="fas fa-arrow-left"></span>
         </a>
     </div>
@@ -24,10 +24,9 @@
             <textarea name="description" class="p-2 border rounded" placeholder="Description"></textarea>
         </div>
 
+        <!-- adding step -->
         <div class="py-1">
-            
             @livewire('step')
-
         </div>
 
         <!-- Create Button -->

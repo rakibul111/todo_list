@@ -27,9 +27,7 @@ Route::put('/todos/{todo}/complete', [TodoController::class, 'complete'])->name(
 Route::delete('/todos/{todo}/incomplete', [TodoController::class, 'incomplete'])->name('todo.incomplete');
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TodoController::class, 'index']);
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [TodoController::class, 'index']);

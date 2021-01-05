@@ -2,11 +2,12 @@
 
 @section('content')
     <div class="flex justify-between border-b p-3">
+    
         <!-- Header -->
         <h1 class="text-2xl">All your Todos</h1>
 
-        <!-- Create new button -->
-        <a href="{{route('todo.create')}}" class="mx-5 py-2 text-blue-400 cursor-pointer">
+        <!-- Create button -->
+        <a href="{{route('todo.create')}}" class="mx-5 py-2 text-blue-400 text-lg cursor-pointer">
             <span class="fas fa-plus-circle"></span>
         </a>
     </div>

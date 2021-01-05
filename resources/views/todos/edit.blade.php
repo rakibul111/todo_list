@@ -7,7 +7,7 @@
         <h1 class="text-2xl">Update this To-Do</h1>
 
         <!-- Back button -->
-        <a href="{{route('todo.index')}}" class="mx-5 py-2 text-gray-400 cursor-pointer">
+        <a href="{{route('todo.index')}}" class="mx-5 py-2 text-gray-400 text-base cursor-pointer">
             <span class="fas fa-arrow-left"></span>
         </a>
     </div>

@@ -1,7 +1,7 @@
 <div>
     <div class="flex justify-center mb-2">
         <h2 class="text-lg"> Add steps if required </h2>
-        <span wire:click="add" class="fas fa-plus-circle text-blue-300 cursor-pointer m-1.5"></span>
+        <span wire:click="add" class="fas fa-plus-circle text-green-300 text-base cursor-pointer m-1.5"></span>
     </div>
 
     <!-- populate input based on $steps var -->
