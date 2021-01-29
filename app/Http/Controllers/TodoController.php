@@ -65,7 +65,7 @@ class TodoController extends Controller
         // }
         ////////////////////////////////////////////////////////////////////
         // Create todos table under authenticated user
-        // dd( auth()->user()->todos);
+        //dd($request->validated());
         // auth()->user()->todos()->create($request->all());
 
         // Create todos(insert into table) using User->todos()

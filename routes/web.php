@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\GuestController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -31,3 +32,5 @@ Route::get('/', [TodoController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [TodoController::class, 'index']);
+
+Route::get('/guest', [GuestController::class, 'index']);
